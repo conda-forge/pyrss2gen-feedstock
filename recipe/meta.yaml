@@ -4,7 +4,7 @@
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/PyRSS2Gen-{{ version }}.tar.gz
@@ -17,6 +17,7 @@ build:
 
 requirements:
   host:
+    - setuptools
     - pip
     - python {{ python_min }}
   run:
@@ -28,6 +29,7 @@ test:
   commands:
     - pip check
   requires:
+    - setuptools
     - pip
     - python {{ python_min }}
 
